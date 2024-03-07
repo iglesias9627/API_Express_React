@@ -1,7 +1,7 @@
 const db = require('../models');
 const Tutorial = db.tutorials;
 
-// Create ans Save a new tutorial
+// Create and Save a new tutorial
 exports.create = (req, res) => {
     // Validate resquest
     if (!req.body.title) {
@@ -36,7 +36,8 @@ exports.findAll = (req, res) => {
 
     Tutorial.find(condition)
       .then(data => {
-        res.send(data)
+        response = {tutorials: data};
+        res.send(response)
       })
       .catch(err => {
         res.status(500).send({
