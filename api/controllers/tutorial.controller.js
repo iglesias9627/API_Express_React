@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 // Retrieve all tutorials from the database
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    let condition = title ? {title: { $regex: new RegExp(title), $option: "i"}} : {};
+    let condition = title ? {title: { $regex: new RegExp(title), $options: "i"}} : {};
 
     Tutorial.find(condition)
       .then(data => {
@@ -92,7 +92,7 @@ exports.update = (req, res) => {
 // Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
-    Tutorial.findByIdAndRemove(id)
+    Tutorial.findOneAndDelete({ _id: id })
       .then(data => {
         if(!data) {
             res.status(404).send({
