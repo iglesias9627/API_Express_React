@@ -13,8 +13,8 @@ class TutorialDataService {
         return http.post("/tutorials", data);
     }
 
-    update(data) {
-        return http.put(`/tutorials/${id}`);
+    update(id, data) {
+        return http.put(`/tutorials/${id}`, data);
     }
 
     delete(id) {
