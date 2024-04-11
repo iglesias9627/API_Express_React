@@ -54,7 +54,7 @@ export const updateTutorial = (id, data) => async (dispatch) => {
      };
 };
 
-export const deleteTutorial = (id) = async (dispatch) => {
+export const deleteTutorial = (id) => async (dispatch) => {
     try {
         await TutorialDataService.delete(id);
         dispatch({

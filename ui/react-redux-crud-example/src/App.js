@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/tutorials"} className="navbar-brand">
+          <Link to={"/tutorials2"} className="navbar-brand">
             Welcome to my Tutorial React App
           </Link>
           <div className="navbar-nav mr-auto">
